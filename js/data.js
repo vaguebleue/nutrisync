@@ -87,7 +87,7 @@ window.NUTRISYNC = window.NUTRISYNC || {};
         ['Hạn sử dụng', '1 ngày kể từ ngày sản xuất'],
         ['Bảo quản', '2–4°C, tránh ánh nắng trực tiếp']
       ],
-      ingredients: 'Xà lách, cá ngừ, bơ, bắp, cà chua bi, trứng, hành tím, sốt mè rang.'
+      ingredients: '35% xà lách hỗn hợp, 25% cá ngừ ngâm dầu, 20% bơ tươi, 15% trứng, sốt mè rang (mè, dầu đậu nành, giấm, đường), cà chua bi.'
     },
     {
       id: 'sandwich-uc-ga',
@@ -109,7 +109,7 @@ window.NUTRISYNC = window.NUTRISYNC || {};
         ['Hạn sử dụng', '1 ngày kể từ ngày sản xuất'],
         ['Bảo quản', '2–4°C, tránh ánh nắng trực tiếp']
       ],
-      ingredients: 'Bánh mì nguyên cám, ức gà nướng, trứng, xà lách, cà chua, sốt sữa chua.'
+      ingredients: '40% bánh mì đen nguyên cám, 30% ức gà nướng, 15% bơ tươi nghiền, 15% trứng, xà lách, cà chua, muối, tiêu.'
     },
     {
       id: 'pasta-bo-bam',
@@ -131,7 +131,7 @@ window.NUTRISYNC = window.NUTRISYNC || {};
         ['Hạn sử dụng', '1 ngày kể từ ngày sản xuất'],
         ['Bảo quản', '2–4°C, tránh ánh nắng trực tiếp']
       ],
-      ingredients: 'Pasta nguyên cám, thịt bò bằm, sốt cà chua, bông cải, bắp, phô mai Parmesan.'
+      ingredients: '45% mì Ý nguyên cám, 25% thịt bò bằm, cà chua tươi, sốt cà chua, bắp, bông cải xanh, dưa leo,  hành tây, tỏi, lá húng tây (basil), dầu olive, gia vị.'
     },
     {
       id: 'com-lut-bo-lac',
@@ -153,7 +153,7 @@ window.NUTRISYNC = window.NUTRISYNC || {};
         ['Hạn sử dụng', '1 ngày kể từ ngày sản xuất'],
         ['Bảo quản', '2–4°C, tránh ánh nắng trực tiếp']
       ],
-      ingredients: 'Gạo lứt, bò Úc lúc lắc, bông cải, bắp, cà rốt, sốt tiêu đen.'
+      ingredients: '40% cơm gạo lứt, 30% thịt bò thăn, ớt chuông, hành tây, cà chua bi, bắp, bông cải xanh, dưa leo, sốt ướp bò lúc lắc, dầu đậu nành, muối, tiêu.'
     },
     {
       id: 'com-lut-tom-nuong',
@@ -175,7 +175,7 @@ window.NUTRISYNC = window.NUTRISYNC || {};
         ['Hạn sử dụng', '1 ngày kể từ ngày sản xuất'],
         ['Bảo quản', '2–4°C, tránh ánh nắng trực tiếp']
       ],
-      ingredients: 'Gạo lứt, tôm nướng, bông cải, bắp, cà chua, sốt chanh dây.'
+      ingredients: '45% cơm gạo lứt, 25% tôm thẻ nướng, xà lách, cà chua bi, bắp, bông cải xanh, dưa leo, sốt bơ tỏi, dầu thực vật, muối, tiêu, gia vị vừa đủ.'
     },
 
     /* ------------------------- BỮA PHỤ & SNACK ------------------------- */
@@ -243,7 +243,7 @@ window.NUTRISYNC = window.NUTRISYNC || {};
         ['Hạn sử dụng', '4 tháng kể từ ngày sản xuất'],
         ['Bảo quản', 'Đậy kín nắp, để nơi khô ráo']
       ],
-      ingredients: 'Hạnh nhân, hạt điều, óc chó, nho khô, yến mạch, hạt bí.'
+      ingredients: '35% hạt hạnh nhân rang mộc, 35% hạt điều rang mộc, 30% hạt óc chó.'
     },
     {
       id: 'combo-tra-va-hat',
@@ -265,7 +265,7 @@ window.NUTRISYNC = window.NUTRISYNC || {};
         ['Hạn sử dụng', '4 tháng kể từ ngày sản xuất'],
         ['Bảo quản', 'Nơi khô ráo, tránh ánh nắng trực tiếp']
       ],
-      ingredients: 'Trà hoa cúc, mật ong, hạt điều rang mộc, muối biển.'
+      ingredients: '75% hạt điều rang mộc, 25% trà hoa cúc mật ong sấy khô.'
     },
 
     /* ----------------------------- ĐỒ UỐNG ----------------------------- */
@@ -289,7 +289,7 @@ window.NUTRISYNC = window.NUTRISYNC || {};
         ['Hạn sử dụng', '7 ngày kể từ ngày sản xuất'],
         ['Bảo quản', '2–4°C, tránh ánh nắng trực tiếp']
       ],
-      ingredients: 'Trà ô long, hạt chia, nước tinh khiết.'
+      ingredients: '75% trà ô long cold-brew, 15% thạch nha đam, 10% hạt chia.'
     },
     {
       id: 'nuoc-ep-trai-cay',
@@ -311,7 +311,7 @@ window.NUTRISYNC = window.NUTRISYNC || {};
         ['Hạn sử dụng', '2 ngày kể từ ngày sản xuất'],
         ['Bảo quản', '2–4°C, tránh ánh nắng trực tiếp']
       ],
-      ingredients: 'Táo, dứa, cần tây, chanh, gừng, nước tinh khiết.'
+      ingredients: '45% nước ép táo nguyên chất, 35% nước ép thơm, 20% nước ép cần tây.'
     },
     {
       id: 'sinh-to-whey',
@@ -333,7 +333,7 @@ window.NUTRISYNC = window.NUTRISYNC || {};
         ['Hạn sử dụng', '2 ngày kể từ ngày sản xuất'],
         ['Bảo quản', '2–4°C, tránh ánh nắng trực tiếp']
       ],
-      ingredients: 'Whey protein, bơ, chuối, sữa hạnh nhân, hạt chia.'
+      ingredients: '30% bơ tươi, 25% chuối chín, 25% sữa tươi không đường, 10% yến mạch, 10% bột Whey Protein.'
     }
   ];
 
