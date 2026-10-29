@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NUTRISYNC – Đồ ăn healthy cho sinh viên | Đặt món lành mạnh mỗi ngày</title>
+  <meta name="description" content="NUTRISYNC cung cấp bữa chính, snack và đồ uống healthy dành cho sinh viên: nguyên liệu tươi, giá hợp lý, giao nhanh trong nội thành TP.HCM.">
+  <meta name="keywords" content="đồ ăn healthy, sinh viên, salad cá ngừ, cơm lứt, snack hạt, nước ép, NUTRISYNC">
+  <meta name="author" content="NUTRISYNC">
+  <meta name="theme-color" content="#006c33">
+  <link rel="canonical" href="https://nutrisync.vn/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NUTRISYNC">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:title" content="NUTRISYNC – Đồ ăn healthy cho sinh viên">
+  <meta property="og:description" content="Bữa ăn tươi chuẩn macros, snack hạt và đồ uống không đường tinh luyện – dành riêng cho nhịp sống sinh viên.">
+  <meta property="og:url" content="https://nutrisync.vn/">
+  <meta property="og:image" content="https://nutrisync.vn/assets/img/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="NUTRISYNC – Ăn uống lành mạnh hơn, chăm sóc bản thân tốt hơn.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NUTRISYNC – Đồ ăn healthy cho sinh viên">
+  <meta name="twitter:description" content="Bữa ăn tươi chuẩn macros, snack hạt và đồ uống không đường tinh luyện.">
+  <meta name="twitter:image" content="https://nutrisync.vn/assets/img/og-cover.jpg">
+
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <!-- Nạp sớm ảnh hero để tránh nhấp nháy -->
+  <link rel="preload" as="image" href="assets/img/hero-fern.webp" fetchpriority="high">
+
+  <!-- Font: Oswald (tiêu đề), Be Vietnam Pro (nội dung), Playfair Display (quote) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Dữ liệu và logic: thứ tự nạp rất quan trọng -->
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/catalog.js" defer></script>
+  <script src="js/cart.js" defer></script>
+
+  <!-- Structured data: giúp Google hiểu thương hiệu & danh sách món -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://nutrisync.vn/#organization",
+        "name": "NUTRISYNC",
+        "url": "https://nutrisync.vn/",
+        "logo": "https://nutrisync.vn/assets/img/logo-mark.webp",
+        "description": "Thực phẩm healthy dành cho sinh viên: bữa chính, snack hạt và đồ uống tươi.",
+        "email": "hello@nutrisync.vn",
+        "telephone": "+8419001234",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Nguyễn Văn Cừ, Phường 4, Quận 5",
+          "addressLocality": "TP. Hồ Chí Minh",
+          "addressCountry": "VN"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://nutrisync.vn/#website",
+        "url": "https://nutrisync.vn/",
+        "name": "NUTRISYNC",
+        "inLanguage": "vi-VN",
+        "publisher": { "@id": "https://nutrisync.vn/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://nutrisync.vn/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Thực đơn NUTRISYNC",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Salad cá ngừ", "url": "https://nutrisync.vn/#salad-ca-ngu" },
+          { "@type": "ListItem", "position": 2, "name": "Sandwich ức gà", "url": "https://nutrisync.vn/#sandwich-uc-ga" },
+          { "@type": "ListItem", "position": 3, "name": "Pasta bò bằm", "url": "https://nutrisync.vn/#pasta-bo-bam" },
+          { "@type": "ListItem", "position": 4, "name": "Cơm lứt bò lúc lắc", "url": "https://nutrisync.vn/#com-lut-bo-lac" },
+          { "@type": "ListItem", "position": 5, "name": "Cơm lứt tôm nướng", "url": "https://nutrisync.vn/#com-lut-tom-nuong" },
+          { "@type": "ListItem", "position": 6, "name": "Thanh hạt năng lượng", "url": "https://nutrisync.vn/#thanh-hat-nang-luong" },
+          { "@type": "ListItem", "position": 7, "name": "Snack hạt bí xanh", "url": "https://nutrisync.vn/#snack-hat-bi-xanh" },
+          { "@type": "ListItem", "position": 8, "name": "Hũ hạt ngũ cốc", "url": "https://nutrisync.vn/#hu-hat-ngu-coc" },
+          { "@type": "ListItem", "position": 9, "name": "Combo trà & hạt", "url": "https://nutrisync.vn/#combo-tra-va-hat" },
+          { "@type": "ListItem", "position": 10, "name": "Trà ô long", "url": "https://nutrisync.vn/#tra-o-long" },
+          { "@type": "ListItem", "position": 11, "name": "Nước ép trái cây", "url": "https://nutrisync.vn/#nuoc-ep-trai-cay" },
+          { "@type": "ListItem", "position": 12, "name": "Sinh tố whey", "url": "https://nutrisync.vn/#sinh-to-whey" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="page-store">
+
+  <!-- Bỏ qua điều hướng: hỗ trợ người dùng bàn phím / screen reader -->
+  <a class="skip-link" href="#main">Chuyển đến nội dung chính</a>
+
+  <!-- ======================================================================
+       SVG SPRITE – các icon dùng lại trong toàn trang
+       ====================================================================== -->
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3h3l1.5 4-2 1.4a15 15 0 0 0 6.5 6.5l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A17.8 17.8 0 0 1 4.6 5.2 2 2 0 0 1 6.6 3Z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V5h6v2m-8 0 1 13h8l1-13"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 1 1 14 0c0 5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4C10 4 4 10 4 20c10 0 16-6 16-16Z"/><path d="M4 20c4-6 8-10 14-14"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8Z"/><path d="m19 16 .8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8Z"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16"/><path d="M7 17v-5h3v5m2 0V8h3v9m2 0V5h3v12"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="m10.5 7.2-4 8.6m7-8.6 4 8.6M7.5 18h9"/></symbol>
+    <symbol id="i-badge" viewBox="0 0 24 24"><path d="M12 2.5 15 5l3.2-.2.9 3.1 2.4 2.1-1.5 2.9 1.5 2.9-2.4 2.1-.9 3.1L15 19l-3 2.5L9 19l-3.2.2-.9-3.1-2.4-2.1 1.5-2.9-1.5-2.9 2.4-2.1.9-3.1L9 5Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></symbol>
+    <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 10a6 6 0 0 1-12 0c0-3 3-6 6-10Z"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c1 3 5 5 5 9a5 5 0 0 1-10 0c0-2 1-3.5 2.5-5 .2 1.5 1 2 2 2.5C12 7.5 12 5.5 12 3Z"/></symbol>
+    <symbol id="deco-swirl" viewBox="0 0 240 200"><path d="M12 168c44 4 58-28 34-44-18-12-36 4-27 20 7 12 26 10 40-2 22-18 17-47-6-61-24-15-50-2-53 19" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M90 156c58-6 104-24 132-58" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></symbol>
+    <symbol id="deco-sprig" viewBox="0 0 120 160"><path d="M60 154V20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M60 46c-22-4-30-18-28-32 20 2 29 14 28 32Zm0 28c22-4 30-18 28-32-20 2-29 14-28 32Zm0 28c-22-4-30-18-28-32 20 2 29 14 28 32Z" fill="currentColor"/></symbol>
+  </svg>
+
+  <!-- ======================================================================
+       HEADER – sticky, dùng chung cho 3 trang
+       ====================================================================== -->
+  <header class="site-header" data-header>
+    <div class="container header__bar">
+      <a class="brand" href="index.html" aria-label="NUTRISYNC – Trang chủ">
+        <img class="brand__logo" src="assets/img/logo-lockup.webp" alt="" width="760" height="497">
+        <span class="sr-only">NUTRISYNC</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Điều hướng chính">
+        <ul class="primary-nav__list">
+          <li><a class="nav-link is-active" href="index.html" aria-current="page">Cửa hàng</a></li>
+          <li><a class="nav-link" href="about.html">Về chúng tôi</a></li>
+          <li><a class="nav-link" href="get-app.html">Get App</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <form class="search" role="search" action="index.html" method="get" data-search-form>
+          <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <label class="sr-only" for="site-search">Tìm sản phẩm</label>
+          <input id="site-search" type="search" name="q" placeholder="Tìm món healthy..." autocomplete="off" data-search>
+          <button class="search__submit" type="submit" aria-label="Tìm kiếm">
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+          </button>
+        </form>
+
+        <a class="icon-btn search-link" href="index.html#search" aria-label="Tìm kiếm sản phẩm" data-search-link>
+          <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </a>
+
+        <button class="icon-btn" type="button" data-open-cart aria-label="Mở giỏ hàng">
+          <svg class="icon" aria-hidden="true"><use href="#i-cart"></use></svg>
+          <span class="cart-count" data-cart-count hidden>0</span>
+        </button>
+
+        <button class="icon-btn" type="button" data-open-contact aria-label="Liên hệ NUTRISYNC">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+        </button>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-nav-toggle>
+          <span class="nav-toggle__box" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="sr-only">Mở menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu di động: được bật/tắt bằng JS -->
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu inert>
+      <nav aria-label="Điều hướng trên thiết bị di động">
+        <ul class="mobile-nav__list">
+          <li><a class="nav-link is-active" href="index.html" aria-current="page">Cửa hàng</a></li>
+          <li><a class="nav-link" href="about.html">Về chúng tôi</a></li>
+          <li><a class="nav-link" href="get-app.html">Get App</a></li>
+        </ul>
+      </nav>
+      <form class="search search--mobile" role="search" action="index.html" method="get" data-search-form>
+        <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        <label class="sr-only" for="site-search-mobile">Tìm sản phẩm</label>
+        <input id="site-search-mobile" type="search" name="q" placeholder="Tìm món healthy..." autocomplete="off" data-search>
+        <button class="search__submit" type="submit" aria-label="Tìm kiếm">
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+        </button>
+      </form>
+      <button class="btn btn--primary btn--block" type="button" data-open-contact>Liên hệ với NUTRISYNC</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ====================================================================
+         HERO
+         ==================================================================== -->
+    <section class="hero hero--store" aria-labelledby="hero-title">
+      <div class="hero__media" aria-hidden="true"></div>
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <svg class="hero__deco hero__deco--left" aria-hidden="true"><use href="#deco-swirl"></use></svg>
+      <svg class="hero__deco hero__deco--right" aria-hidden="true"><use href="#deco-sprig"></use></svg>
+
+      <div class="container hero__content">
+        <p class="hero__eyebrow">Đồ ăn healthy cho sinh viên</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__quote">“Ăn uống lành mạnh hơn,<br>chăm sóc bản thân tốt hơn.”</span>
+        </h1>
+        <p class="hero__sub">
+          Bữa ăn tươi chuẩn macros, snack hạt và đồ uống không đường tinh luyện —
+          đủ ngon, đủ chất và vừa vặn với lịch học dày đặc.
+        </p>
+        <a class="btn btn--light" href="#menu">
+          Khám phá thực đơn
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+        </a>
+      </div>
+
+      <div class="hero__torn" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+          <path fill="#f8f8e8" d="M0 65 18 61 36 67 54 60 72 66 90 62 108 68 126 59 145 66 163 61 181 67 199 63 217 69 235 60 253 67 271 62 289 68 307 64 325 70 343 61 361 67 379 63 397 69 415 60 433 66 451 62 469 68 487 64 505 70 523 61 541 67 559 63 577 69 595 60 613 66 631 62 649 68 667 64 685 70 703 61 721 67 739 63 757 69 775 60 793 66 811 62 829 68 847 64 865 70 883 61 901 67 919 63 937 69 955 60 973 66 991 62 1009 68 1027 64 1045 70 1063 61 1081 67 1099 63 1117 69 1135 60 1153 66 1171 62 1189 68 1207 64 1225 70 1243 61 1261 67 1279 63 1297 69 1315 60 1333 66 1351 62 1369 68 1387 64 1405 70 1422 61 1440 66V90H0Z"/>
+        </svg>
+      </div>
+
+      <a class="hero__scroll" href="#menu" aria-label="Cuộn xuống thực đơn">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ====================================================================
+         THỰC ĐƠN – nội dung do catalog.js render từ data.js
+         ==================================================================== -->
+    <section class="catalog" id="menu" aria-labelledby="menu-title">
+      <div class="container">
+        <header class="section-heading" data-reveal>
+          <div class="section-heading__main">
+            <p class="eyebrow">Thực đơn hôm nay</p>
+            <h2 id="menu-title">Món ngon cho mỗi ngày học</h2>
+          </div>
+          <p class="section-heading__lead">
+            Chọn một bữa chính thật chắc bụng, thêm một món snack cho giờ nghỉ
+            và một chai nước mát lành — tất cả đều được chuẩn bị trong ngày.
+          </p>
+        </header>
+
+        <!-- Thanh tìm kiếm tinh gọn cho mobile / khi bấm icon search -->
+        <div class="inline-search" id="search">
+          <form class="search search--inline" role="search" action="index.html" method="get" data-search-form>
+            <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+            <label class="sr-only" for="inline-search-input">Tìm sản phẩm</label>
+            <input id="inline-search-input" type="search" name="q" placeholder="Tìm theo tên món hoặc nguyên liệu..." autocomplete="off" data-search>
+            <button class="search__submit" type="submit" aria-label="Tìm kiếm">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            </button>
+          </form>
+        </div>
+
+        <p class="search-status" data-search-status role="status" aria-live="polite"></p>
+
+        <!-- catalog.js sẽ chèn các section danh mục vào đây -->
+        <div class="catalog__body" data-catalog></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         STRIP GIÁ TRỊ – tăng độ tin cậy, không có trong mockup nhưng phù hợp
+         ==================================================================== -->
+    <section class="values-strip" aria-label="Cam kết của NUTRISYNC">
+      <div class="container values-strip__grid">
+        <div class="value-chip" data-reveal>
+          <span class="value-chip__icon"><svg class="icon" aria-hidden="true"><use href="#i-leaf"></use></svg></span>
+          <div><strong>Nguyên liệu tươi mỗi ngày</strong><span>Chuẩn bị trong ngày, không phẩm màu</span></div>
+        </div>
+        <div class="value-chip" data-reveal>
+          <span class="value-chip__icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"></use></svg></span>
+          <div><strong>Macros rõ ràng</strong><span>Biết mình đang nạp gì vào cơ thể</span></div>
+        </div>
+        <div class="value-chip" data-reveal>
+          <span class="value-chip__icon"><svg class="icon" aria-hidden="true"><use href="#i-droplet"></use></svg></span>
+          <div><strong>Không đường tinh luyện</strong><span>Vị ngọt tự nhiên từ trái cây</span></div>
+        </div>
+        <div class="value-chip" data-reveal>
+          <span class="value-chip__icon"><svg class="icon" aria-hidden="true"><use href="#i-badge"></use></svg></span>
+          <div><strong>Giá dành cho sinh viên</strong><span>Từ 20.000đ, giao nhanh nội thành</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER – dùng chung cho 3 trang
+       ====================================================================== -->
+  <footer class="site-footer">
+    <svg class="footer-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#2f7d46" d="M0 56c96-34 192-36 288-8s192 30 288 6 192-40 288-30 192 40 288 34 192-22 288-26v58H0Z"/>
+    </svg>
+    <div class="footer__body">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a class="footer__logo" href="index.html" aria-label="NUTRISYNC – Trang chủ">
+            <span class="footer__mark"><img src="assets/img/logo-mark.webp" alt="" width="420" height="413"></span>
+            <span class="footer__wordmark">NUTRISYNC</span>
+          </a>
+          <p>Đồ ăn healthy cho sinh viên — ăn ngon, đủ chất và vừa ngân sách.</p>
+          <p class="footer__quote">“Ăn uống lành mạnh hơn, chăm sóc bản thân tốt hơn.”</p>
+        </div>
+
+        <div class="footer__col">
+          <h2 class="footer__title">Liên hệ</h2>
+          <ul class="footer__contact">
+            <li><span>Người đại diện</span><strong data-contact="representative">Ông Đỗ Minh Quân</strong></li>
+            <li><span>Địa chỉ</span><strong data-contact="address">Tầng 2, 123 Nguyễn Văn Cừ, Phường 4, Quận 5, TP. Hồ Chí Minh</strong></li>
+            <li><span>Email</span><a href="mailto:hello@nutrisync.vn" data-contact-link="email"><span data-contact="email">hello@nutrisync.vn</span></a></li>
+            <li><span>Hotline</span><a href="tel:19001234" data-contact-link="phone"><span data-contact="phone">1900 1234</span></a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h2 class="footer__title">Khám phá</h2>
+          <ul class="footer__links">
+            <li><a href="index.html">Cửa hàng</a></li>
+            <li><a href="about.html">Về chúng tôi</a></li>
+            <li><a href="get-app.html">Get App</a></li>
+            <li><button class="linklike" type="button" data-open-contact>Liên hệ</button></li>
+          </ul>
+          <button class="btn btn--light btn--small" type="button" data-open-contact>
+            <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+            Gửi tin nhắn
+          </button>
+        </div>
+      </div>
+
+      <div class="container footer__bottom">
+        <p>© <span data-year>2026</span> NUTRISYNC. Website demo phi lợi nhuận dành cho mục đích học tập.</p>
+        <p>Thiết kế &amp; phát triển với HTML, CSS và JavaScript thuần.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       DIALOGS – giỏ hàng, chi tiết sản phẩm, xác nhận, liên hệ, thành công
+       ====================================================================== -->
+
+  <!-- Giỏ hàng -->
+  <dialog class="modal modal--cart" id="cart-modal" aria-labelledby="cart-title">
+    <div class="modal__panel">
+      <button class="modal__close" type="button" data-close-dialog aria-label="Đóng giỏ hàng">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+
+      <div class="cart">
+        <div class="cart__aside">
+          <h2 class="cart__title" id="cart-title">
+            <svg class="icon" aria-hidden="true"><use href="#i-cart"></use></svg>
+            Giỏ hàng
+          </h2>
+          <p class="cart__subtitle">Kiểm tra món ăn và điền thông tin giao hàng.</p>
+
+          <dl class="cart__summary">
+            <div><dt>Tổng hoá đơn</dt><dd data-cart-total>0đ</dd></div>
+            <div><dt>Tổng số món</dt><dd data-cart-count-label>0</dd></div>
+          </dl>
+
+          <form class="cart__form" data-checkout-form novalidate>
+            <div class="field">
+              <label class="field__label" for="coupon">Mã giảm giá</label>
+              <div class="field__row">
+                <input class="input" id="coupon" name="coupon" type="text" placeholder="Nhập mã giảm giá" autocomplete="off" data-coupon-input>
+                <button class="btn btn--outline btn--small" type="button" data-apply-coupon>Áp dụng</button>
+              </div>
+              <p class="field__hint" data-coupon-status></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="phone">Số điện thoại</label>
+              <input class="input" id="phone" name="phone" type="tel" inputmode="tel" placeholder="Số điện thoại" autocomplete="tel" data-phone>
+              <p class="field__error" data-error-for="phone"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="address">Địa chỉ nhận</label>
+              <input class="input" id="address" name="address" type="text" placeholder="Địa chỉ nhận hàng" autocomplete="street-address" data-address>
+              <p class="field__error" data-error-for="address"></p>
+            </div>
+
+            <dl class="cart__totals">
+              <div><dt>Tạm tính</dt><dd data-cart-subtotal>0đ</dd></div>
+              <div data-discount-row hidden><dt>Giảm giá <span data-coupon-label></span></dt><dd data-cart-discount>0đ</dd></div>
+              <div class="cart__totals-grand"><dt>Thành tiền</dt><dd data-cart-grand>0đ</dd></div>
+            </dl>
+
+            <button class="btn btn--primary btn--block" type="submit" data-checkout-submit>
+              Xác nhận thanh toán
+            </button>
+            <p class="cart__note">
+              <svg class="icon" aria-hidden="true"><use href="#i-leaf"></use></svg>
+              Miễn phí giao hàng trong nội thành TP.HCM. Đơn hàng demo, chưa gửi đến hệ thống thật.
+            </p>
+          </form>
+        </div>
+
+        <div class="cart__items-wrap">
+          <div class="cart__items-head">
+            <h3>Các món đã chọn</h3>
+            <span data-cart-items-count>0 món</span>
+          </div>
+          <div class="cart__items" data-cart-items></div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Chi tiết sản phẩm: nội dung do catalog.js render -->
+  <dialog class="modal modal--product" id="product-modal" aria-labelledby="product-title">
+    <div class="modal__panel">
+      <button class="modal__close" type="button" data-close-dialog aria-label="Đóng thông tin sản phẩm">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+      <div data-product-content></div>
+    </div>
+  </dialog>
+
+  <!-- Xác nhận thêm vào giỏ -->
+  <dialog class="modal modal--confirm" id="confirm-modal" aria-labelledby="confirm-title">
+    <div class="modal__panel">
+      <button class="modal__close" type="button" data-close-dialog aria-label="Đóng hộp xác nhận">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+      <h2 class="confirm__title" id="confirm-title">Thêm vào giỏ hàng</h2>
+      <dl class="confirm__rows">
+        <div><dt>Tên sản phẩm:</dt><dd data-confirm-name></dd></div>
+        <div><dt>Số lượng:</dt><dd data-confirm-qty></dd></div>
+        <div><dt>Giá:</dt><dd data-confirm-price></dd></div>
+      </dl>
+      <div class="confirm__actions">
+        <button class="btn btn--ghost" type="button" data-close-dialog>Huỷ</button>
+        <button class="btn btn--primary" type="button" data-confirm-add>Xác nhận</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Liên hệ -->
+  <dialog class="modal modal--contact" id="contact-modal" aria-labelledby="contact-title">
+    <div class="modal__panel">
+      <button class="modal__close" type="button" data-close-dialog aria-label="Đóng hộp liên hệ">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+      <div class="contact">
+        <svg class="contact__corner contact__corner--tr" aria-hidden="true"><use href="#deco-swirl"></use></svg>
+        <svg class="contact__corner contact__corner--bl" aria-hidden="true"><use href="#deco-swirl"></use></svg>
+
+        <h2 class="contact__title" id="contact-title">Chúng tôi luôn sẵn sàng lắng nghe</h2>
+        <p class="contact__intro">
+          Mỗi sinh viên có một câu chuyện và những nhu cầu riêng. Nếu bạn có câu hỏi về sản phẩm,
+          cần hỗ trợ sử dụng nền tảng hoặc muốn đóng góp ý kiến, chúng tôi luôn trân trọng cơ hội
+          được lắng nghe bạn.
+        </p>
+
+        <dl class="contact__list">
+          <div><dt>Tên thương hiệu</dt><dd data-contact="brand">NUTRISYNC</dd></div>
+          <div><dt>Người đại diện</dt><dd data-contact="representative">Ông Đỗ Minh Quân – Founder</dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:hello@nutrisync.vn" data-contact-link="email"><span data-contact="email">hello@nutrisync.vn</span></a></dd></div>
+          <div><dt>Số điện thoại</dt><dd><a href="tel:19001234" data-contact-link="phone"><span data-contact="phone">1900 1234</span></a></dd></div>
+          <div><dt>Địa chỉ</dt><dd data-contact="address">Tầng 2, 123 Nguyễn Văn Cừ, Phường 4, Quận 5, TP. Hồ Chí Minh</dd></div>
+          <div><dt>Website</dt><dd><a href="https://nutrisync.vn" data-contact-link="website"><span data-contact="website">nutrisync.vn</span></a></dd></div>
+        </dl>
+
+        <p class="contact__text">
+          Chúng tôi tin rằng một cuộc sống khoẻ mạnh hơn không nhất thiết phải bắt đầu bằng những
+          thay đổi lớn. Đôi khi, đó chỉ là một bữa ăn được lựa chọn cẩn thận hơn, một thói quen được
+          duy trì đều đặn hay một lần chủ động dành thời gian để hiểu cơ thể mình.
+        </p>
+        <p class="contact__closing">
+          Chúng tôi ở đây để giúp những lựa chọn ấy trở nên dễ dàng hơn, để bạn có thể yên tâm
+          theo đuổi việc học, những ước mơ và cuộc sống mà mình mong muốn.
+        </p>
+
+        <div class="contact__signature">
+          <span class="contact__signature-name">Đỗ Minh Quân</span>
+          <span class="contact__signature-role">Founder, NUTRISYNC</span>
+        </div>
+
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="mailto:hello@nutrisync.vn?subject=Li%C3%AAn%20h%E1%BB%87%20NUTRISYNC">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+            Gửi email cho chúng tôi
+          </a>
+          <a class="btn btn--outline" href="tel:19001234">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+            Gọi hotline
+          </a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Thanh toán thành công -->
+  <dialog class="modal modal--success" id="success-modal" aria-labelledby="success-title">
+    <div class="modal__panel">
+      <div class="success">
+        <div class="success__icon" aria-hidden="true">
+          <svg class="icon"><use href="#i-check"></use></svg>
+        </div>
+        <h2 class="success__title" id="success-title">Đơn hàng đã được ghi nhận</h2>
+        <p class="success__text">
+          Cảm ơn bạn đã chọn NUTRISYNC. Đây là đơn hàng mô phỏng dùng cho mục đích demo,
+          chưa được gửi đến hệ thống bán hàng thật.
+        </p>
+        <dl class="success__rows">
+          <div><dt>Mã đơn</dt><dd data-success-code>—</dd></div>
+          <div><dt>Tổng thanh toán</dt><dd data-success-total>—</dd></div>
+          <div><dt>Số điện thoại</dt><dd data-success-phone>—</dd></div>
+        </dl>
+        <button class="btn btn--primary btn--block" type="button" data-close-dialog>Tiếp tục mua sắm</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Khu vực hiển thị toast -->
+  <div class="toast-stack" data-toast-stack role="status" aria-live="polite" aria-atomic="false"></div>
+
+</body>
+</html>
