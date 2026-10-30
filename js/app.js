@@ -237,9 +237,9 @@ window.NUTRISYNC = window.NUTRISYNC || {};
     }
   });
 
-  /* ------------------------------------------------------------------------
+/* ------------------------------------------------------------------------
      ACCORDION (trang Về chúng tôi)
-     Mỗi lần chỉ mở một mục.
+     Cho phép mở đồng thời nhiều mục độc lập.
      ------------------------------------------------------------------------ */
   var accordions = toArray(doc.querySelectorAll('[data-accordion]'));
 
@@ -259,12 +259,13 @@ window.NUTRISYNC = window.NUTRISYNC || {};
       if (!trigger || !accordion.contains(trigger)) return;
 
       var item = trigger.closest('.accordion__item');
+      if (!item) return;
+
+      // Kiểm tra trạng thái hiện tại của item được click
       var willOpen = trigger.getAttribute('aria-expanded') !== 'true';
 
-      // Đóng tất cả, sau đó mở mục vừa bấm (nếu đang đóng)
-      toArray(accordion.querySelectorAll('.accordion__item')).forEach(function (entry) {
-        setAccordionItem(entry, entry === item ? willOpen : false);
-      });
+      // Chỉ thay đổi trạng thái của duy nhất item vừa bấm (không đụng đến các item khác)
+      setAccordionItem(item, willOpen);
     });
   });
 
