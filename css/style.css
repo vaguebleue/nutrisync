@@ -2474,12 +2474,19 @@ h6 {
   padding: 13px 16px;
   border-radius: 14px;
   background: var(--green-900);
-  color: var(--cream);
   font-size: 0.82rem;
   line-height: 1.45;
   box-shadow: var(--shadow-md);
   pointer-events: auto;
   animation: toastIn 0.34s var(--ease);
+  color: var(--cream) !important;
+  z-index: 9999 !important; /* Đảm bảo toast luôn nổi lên trên cùng */
+}
+
+.toast *,
+.toast p,
+.toast span {
+  color: var(--cream) !important;
 }
 
 .toast.is-leaving {
@@ -2937,7 +2944,7 @@ h6 {
 
 .mission__aaa {
   margin: clamp(26px, 4vw, 42px) 0 clamp(20px, 3vw, 28px);
-  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  font-size: clamp(1.05rem, 2.2vw, 1.8rem);
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -4049,4 +4056,23 @@ font-family: 'Oswald', sans-serif;
   br.desktop-only {
     display: none;
   }
+}
+/* ========================================================================
+   ĐOẠN DẪN DẮT (STORY LEAD / INTRO QUOTE)
+   ======================================================================== */
+
+.story-lead {
+  max-width: 840px !important;
+  margin: 40px auto 48px auto !important;
+  padding: 26px 34px !important;
+  background: #FAFAED !important;                /* Nền kem sáng */
+  border: 2px solid var(--green-900) !important;
+  border-radius: 16px !important;
+  box-shadow: 6px 6px 0px var(--green-800) !important; /* Bóng đệm khối dày lệch sang phải */
+  text-align: center !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 1.6rem !important;
+  font-weight: 600 !important;
+  line-height: 1.55 !important;
+  color: var(--green-900) !important;
 }
