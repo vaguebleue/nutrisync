@@ -4073,3 +4073,26 @@ font-family: 'Oswald', sans-serif;
   padding: 0 20px !important;
   box-sizing: border-box !important;
 }
+.goals-heading {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  margin: 48px auto 32px auto !important;
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 1.65rem !important;
+  font-weight: 700 !important;
+  color: var(--green-900) !important;
+  letter-spacing: 1px !important;
+  text-align: center !important;
+}
+
+/* 2 đường kẻ trang trí 2 bên */
+.goals-heading::before,
+.goals-heading::after {
+  content: "" !important;
+  height: 2px !important;
+  width: 60px !important;                /* Độ dài đường kẻ */
+  background: var(--green-700) !important;
+  display: inline-block !important;
+}
