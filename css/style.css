@@ -440,16 +440,20 @@ h6 {
   min-height: var(--header-h);
 }
 
-.brand {
-  display: inline-flex;
-  align-items: center;
-  flex: none;
+/* Căn chỉnh chiều cao và khoảng cách cho Logo .brand__logo */
+.brand__logo {
+  max-height: 78px !important;    /* Điều chỉnh chiều cao vừa vặn (tùy chỉnh 48px - 56px) */
+  width: auto !important;         /* Giữ nguyên tỉ lệ khung hình */
+  margin-top: 14px !important;     /* Đẩy logo lùi xuống khỏi trần header */
+  margin-bottom: 14px !important;  /* Khoảng thở bên dưới */
+  object-fit: contain !important;
+  display: block !important;
 }
 
-.brand__logo {
-  width: auto;
-  height: 120px;
-  transition: transform var(--speed) var(--ease);
+/* Đảm bảo thẻ cha chứa logo được căn giữa theo chiều dọc */
+.brand {
+  display: flex !important;
+  align-items: center !important;
 }
 .brand:hover .brand__logo {
   transform: rotate(-2deg) scale(1.03);
@@ -3416,16 +3420,15 @@ font-family: 'Oswald', sans-serif;
 .phone-mockup {
   position: relative;
   z-index: 2;
-  
-  width: 1000px, 100%;
-  height: auto;
+  transform-origin: center center !important;
+
   
   filter: drop-shadow(0 30px 44px rgba(3, 27, 14, 0.4));
   
   /* Dời vị trí:
      - translateX: % dương -> sang phải, % âm -> sang trái (mặc định: 16%)
      - translateY: px âm -> lên trên, px dương -> xuống dưới */
-  transform: translateX(-60%) translateY(20%);
+  transform: scale(1.12) translateX(-50%) !important; /* Phóng to vừa phải & dịch sang phải 12% */
 }
 
 .app-feature--cream .phone-mockup {
@@ -3439,10 +3442,8 @@ font-family: 'Oswald', sans-serif;
   /* 1. Tăng kích thước điện thoại (cũ là ~280px, tăng lên 360px - 400px) */
   width: min(900px, 100%); 
   height: auto;
-  
-  /* 2. Đẩy điện thoại lên trên để không bị tụt xuống đáy khung */
-  /* Điều chỉnh con số -180px này để lấy vị trí hiển thị đẹp nhất */
-  transform: translateX(0%) translateY(0); 
+  transform: scale(1.7) !important;
+  transform: translateX(20%) translateY(-12%); 
 }
 /* -------------------------------------------------- Thẻ dinh dưỡng */
 .nutrition-card {
@@ -3989,6 +3990,9 @@ font-family: 'Oswald', sans-serif;
 /* ========================================================================
    MOBILE (<= 768px): XẾP DỌC GỌN GÀNG 1 CỘT
    ======================================================================== */
+/* ========================================================================
+   GIAO DIỆN MOBILE (<= 768px): CHỮ TRÊN -> ẢNH DƯỚI (1 CỘT CHUẨN)
+   ======================================================================== */
 @media screen and (max-width: 768px) {
   .story-columns {
     display: flex !important;
@@ -3996,22 +4000,53 @@ font-family: 'Oswald', sans-serif;
     gap: 20px !important;
   }
 
+  /* Phẳng hóa khung chứa 2 cột để điều khiển thứ tự trên Mobile */
   .story-col {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 20px !important;
+    display: contents !important;
   }
 
-  .story-col .media-ph {
+  /* ----------------------------------------------------------------------
+     SẮP XẾP THỨ TỰ TỪ TRÊN XUỐNG BẰNG ORDER
+     ---------------------------------------------------------------------- */
+  /* 1. Chữ 1 (Nói về áp lực học tập) -> Nằm trên cùng (Order 1) */
+  .story-col:first-child .green-card {
+    order: 1 !important;
+  }
+
+  /* 2. Ảnh 1 (Ảnh Stress) -> Nằm ngay dưới Chữ 1 (Order 2) */
+  .story-col:last-child .media-ph {
+    order: 2 !important;
+  }
+
+  /* 3. Chữ 2 (Nói về trăn trở ông Đỗ Minh Quân) -> Nằm tiếp theo (Order 3) */
+  .story-col:last-child .green-card {
+    order: 3 !important;
+  }
+
+  /* 4. Ảnh 2 (Ảnh Vận động chạy bộ) -> Nằm dưới cùng (Order 4) */
+  .story-col:first-child .media-ph {
+    order: 4 !important;
+  }
+
+  /* ----------------------------------------------------------------------
+     ĐỊNH DẠNG HÌNH ẢNH MOBILE GỌN GÀNG
+     ---------------------------------------------------------------------- */
+  .story-columns .media-ph {
     width: 100% !important;
-    height: 220px !important;
+    height: 220px !important; /* Cố định chiều cao banner tỉ lệ chuẩn mobile */
     margin: 0 !important;
+    background: transparent !important;
   }
 
-  .story-col .media-ph__img {
+  .story-columns .media-ph__img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
     border-radius: 16px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  br.desktop-only {
+    display: none;
   }
 }
