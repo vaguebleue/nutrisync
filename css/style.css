@@ -2721,7 +2721,6 @@ h6 {
   flex-direction: column;
   justify-content: center;
   padding: clamp(24px, 3.4vw, 40px);
-  border-radius: var(--radius-md);
   background: linear-gradient(155deg, var(--green-600) 0%, var(--green-800) 68%, var(--green-900) 100%);
   color: rgba(248, 248, 232, 0.92);
   box-shadow: var(--shadow-sm);
@@ -3940,6 +3939,76 @@ font-family: 'Oswald', sans-serif;
   }
 
   .story-split .media-ph__img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+  }
+}
+/* ========================================================================
+   DESKTOP (> 768px): 2 CỘT DỌC TỰ ĐỘNG DÃN ẢNH BẮT CẶP ĐÁY
+   ======================================================================== */
+@media screen and (min-width: 769px) {
+  .story-columns {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; /* Chia 2 cột bằng nhau */
+    gap: 24px !important;                      /* Khoảng cách giữa 2 cột */
+    align-items: stretch !important;             /* Ép chiều cao 2 cột bằng nhau tuyệt đối */
+  }
+
+  .story-col {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;                      /* Khoảng cách giữa khối trên & dưới */
+    height: 100% !important;
+  }
+
+  /* Thẻ chữ co dãn tự nhiên theo dung lượng chữ */
+  .story-col .green-card {
+    flex: 0 0 auto !important;
+    height: auto !important;
+  }
+
+  /* Thẻ ảnh tự động dãn dài lấp đầy toàn bộ khoảng trống còn lại trong cột */
+  .story-col .media-ph {
+    flex: 1 1 auto !important;
+    height: 0 !important;                      /* Bắt buộc có để flex: 1 tính toán đúng chiều cao */
+    margin: 0 !important;
+    background: transparent !important;
+  }
+
+  .story-col .media-ph__img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 20px !important;
+  }
+}
+
+/* ========================================================================
+   MOBILE (<= 768px): XẾP DỌC GỌN GÀNG 1 CỘT
+   ======================================================================== */
+@media screen and (max-width: 768px) {
+  .story-columns {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .story-col {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .story-col .media-ph {
+    width: 100% !important;
+    height: 220px !important;
+    margin: 0 !important;
+  }
+
+  .story-col .media-ph__img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
