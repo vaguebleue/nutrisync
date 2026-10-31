@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@400;500;600&display=swap');
 /* ==========================================================================
    NUTRISYNC – style.css
    CSS nền tảng: biến màu, layout, component và giao diện từng trang.
@@ -53,7 +55,15 @@
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --speed: 0.28s;
 }
+/* Gán font Oswald cho toàn bộ trang web */
+body {
+  font-family: 'Oswald', sans-serif;
+}
 
+/* Ép các thẻ tương tác (vốn mặc định dùng font hệ thống của trình duyệt) kế thừa từ body */
+button, input, select, textarea {
+  font-family: inherit;
+}
 /* --------------------------------------------------------------------------
    2. RESET & KIẾN TRÚC NỀN
    -------------------------------------------------------------------------- */
@@ -133,7 +143,7 @@ ol {
   padding: 0;
   list-style: none;
 }
-
+p,
 h1,
 h2,
 h3,
@@ -142,9 +152,10 @@ h5,
 h6 {
   font-family: var(--font-display);
   font-weight: 600;
-  line-height: 1.06;
+  line-height: 1.3;
   letter-spacing: 0.01em;
   color: var(--green-900);
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
 ::selection {
@@ -259,6 +270,8 @@ h6 {
   margin-top: 10px;
   font-size: clamp(2rem, 4vw, 3.1rem);
   text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+
 }
 
 .section-heading__lead {
@@ -266,6 +279,8 @@ h6 {
   color: var(--muted);
   font-size: 0.96rem;
   line-height: 1.75;
+  font-family: 'Oswald', sans-serif;
+
 }
 
 .linklike {
@@ -277,6 +292,8 @@ h6 {
   text-decoration: underline;
   text-underline-offset: 3px;
   cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+
 }
 .linklike:hover {
   color: var(--green-900);
@@ -291,7 +308,7 @@ h6 {
   padding: 14px 26px;
   border: 1.5px solid transparent;
   border-radius: 999px;
-  font-family: var(--font-body);
+  font-family: 'Oswald', sans-serif;
   font-size: 0.86rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -372,6 +389,8 @@ h6 {
 .btn--small {
   padding: 10px 18px;
   font-size: 0.78rem;
+  font-family: 'Oswald', sans-serif;
+
 }
 
 .btn--block {
@@ -450,7 +469,7 @@ h6 {
   position: relative;
   display: inline-block;
   padding: 10px 0;
-  font-family: var(--font-display);
+  font-family: 'Oswald', sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -601,7 +620,7 @@ h6 {
   border-radius: 999px;
   background: var(--gold);
   color: var(--green-950);
-  font-family: var(--font-body);
+  font-family: 'Oswald', sans-serif;
   font-size: 0.66rem;
   font-weight: 700;
   line-height: 1;
@@ -675,6 +694,8 @@ h6 {
   padding: 14px 4px;
   border-bottom: 1px solid var(--line);
   font-size: 1rem;
+  font-family: 'Oswald', sans-serif;
+
 }
 
 .mobile-nav__list .nav-link::after {
@@ -691,6 +712,8 @@ h6 {
   width: 100%;
   flex: 1;
   font-size: 0.92rem;
+  font-family: 'Oswald', sans-serif;
+
 }
 
 @keyframes menuDrop {
@@ -759,7 +782,7 @@ h6 {
   align-items: center;
   gap: 12px;
   margin-bottom: 22px;
-  font-family: var(--font-body);
+  font-family: 'Oswald', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.26em;
@@ -790,6 +813,7 @@ h6 {
   margin: 26px 0 36px;
   font-size: clamp(0.98rem, 1.4vw, 1.08rem);
   font-weight: 300;
+  font-family: 'Oswald', sans-serif;
   line-height: 1.8;
   color: rgba(248, 248, 232, 0.86);
 }
@@ -913,6 +937,8 @@ h6 {
   width: 100%;
   flex: 1;
   font-size: 0.95rem;
+  font-family: 'Oswald', sans-serif;
+
 }
 
 .search--inline .search__submit {
@@ -924,6 +950,8 @@ h6 {
   min-height: 26px;
   margin-bottom: 30px;
   font-size: 0.84rem;
+  font-family: 'Oswald', sans-serif;
+
   color: var(--muted);
 }
 
@@ -951,6 +979,8 @@ h6 {
   gap: 14px;
   font-size: clamp(1.45rem, 2.6vw, 2rem);
   text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+
 }
 
 .menu-group__head h3 span {
@@ -962,7 +992,7 @@ h6 {
   border-radius: 999px;
   background: var(--cream-deep);
   color: var(--green-800);
-  font-family: var(--font-body);
+  font-family: 'Oswald', sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0;
@@ -972,6 +1002,8 @@ h6 {
   margin-top: 6px;
   font-size: 0.9rem;
   color: var(--muted);
+  font-family: 'Oswald', sans-serif;
+
 }
 
 .menu-group__nav {
@@ -1084,6 +1116,8 @@ h6 {
   background: var(--cream);
   color: var(--green-800);
   font-size: 0.64rem;
+  font-family: 'Oswald', sans-serif;
+
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1138,6 +1172,7 @@ h6 {
 
 .product-card__body h4 {
   font-size: 1.08rem;
+  font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1.25;
@@ -1151,6 +1186,7 @@ h6 {
   display: -webkit-box;
   overflow: hidden;
   font-size: 0.84rem;
+  font-family: 'Oswald', sans-serif;
   line-height: 1.6;
   color: var(--muted);
   -webkit-box-orient: vertical;
@@ -1175,10 +1211,12 @@ h6 {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--green-800);
+  font-family: 'Oswald', sans-serif;
 }
 
 .product-card__macros span {
   font-size: 0.58rem;
+  font-family: 'Oswald', sans-serif;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -1201,6 +1239,7 @@ h6 {
 
 .price__now {
   font-size: 1.02rem;
+  font-family: 'Oswald', sans-serif;
   font-weight: 700;
   color: var(--green-800);
 }
@@ -1391,11 +1430,12 @@ h6 {
 }
 
 .footer__wordmark {
-  font-family: var(--font-display);
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.55rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+
 }
 
 .footer__brand p {
@@ -1415,8 +1455,7 @@ h6 {
 
 .footer__title {
   margin-bottom: 18px;
-  font-family: var(--font-display);
-  font-size: 0.82rem;
+  font-family: 'Oswald', sans-serif;  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1444,6 +1483,7 @@ h6 {
   font-size: 0.86rem;
   font-weight: 400;
   line-height: 1.55;
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
 .footer__contact a {
@@ -1452,6 +1492,7 @@ h6 {
   text-decoration-color: rgba(248, 248, 232, 0.4);
   text-underline-offset: 3px;
   transition: color var(--speed) var(--ease);
+  font-family: 'Oswald', sans-serif;
 }
 
 .footer__contact a:hover {
@@ -1462,6 +1503,7 @@ h6 {
   display: grid;
   gap: 9px;
   margin-bottom: 22px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .footer__links a,
@@ -2584,9 +2626,8 @@ h6 {
 }
 
 .accordion__eyebrow {
-  font-size: 0.62rem;
+  font-size: 0.99rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--green-700);
 }
@@ -2674,6 +2715,7 @@ h6 {
   grid-template-columns: 0.95fr 1.05fr;
 }
 
+/* 2. Code .green-card đã được cập nhật font */
 .green-card {
   display: flex;
   flex-direction: column;
@@ -2683,18 +2725,24 @@ h6 {
   background: linear-gradient(155deg, var(--green-600) 0%, var(--green-800) 68%, var(--green-900) 100%);
   color: rgba(248, 248, 232, 0.92);
   box-shadow: var(--shadow-sm);
+  font-family: 'Oswald', sans-serif; /* Áp dụng font Oswald hẹp cho toàn bộ thẻ xanh */
 }
 
 .green-card p {
-  font-size: 0.88rem;
-  line-height: 1.8;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.05rem;           /* Tăng nhẹ size vì font hẹp thường nhìn nhỏ hơn font tròn */
+  font-weight: 300;              /* Nét chữ thanh mảnh giống bản thiết kế */
+  line-height: 1.6;
+  letter-spacing: 0.02em; 
+  color: rgba(248, 248, 232, 0.95) !important; /* Hoặc dùng var(--cream) */       /* Khoảng cách chữ vừa phải */
 }
 
 .green-card h5 {
   margin-bottom: 10px;
-  font-size: 1.02rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.25rem;            /* Tiêu đề nổi bật */
+  font-weight: 600;              /* Đậm nét giống Canva */
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--cream);
 }
@@ -2702,10 +2750,10 @@ h6 {
 .green-card h5 span {
   display: block;
   margin-top: 2px;
-  font-family: var(--font-body);
-  font-size: 0.66rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.78rem;
   font-weight: 400;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: none;
   color: var(--gold-soft);
 }
@@ -2876,6 +2924,7 @@ h6 {
   color: var(--green-900);
   text-align: center;
   text-wrap: balance;
+  font-family: 'Oswald', sans-serif;
 }
 
 .mission > .media-ph {
@@ -2950,12 +2999,14 @@ h6 {
   font-size: 1.12rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+font-family: 'Oswald', sans-serif;
 }
 
 .core-values__list p {
   font-size: 0.86rem;
   line-height: 1.75;
   color: var(--muted);
+ font-family: 'Oswald', sans-serif;
 }
 
 .core-values__mark {
@@ -3309,6 +3360,7 @@ h6 {
   font-size: 0.86rem;
   line-height: 1.55;
   color: var(--ink-soft);
+ font-family: 'Oswald', sans-serif;
 }
 
 .app-feature--dark .feature-list li {
@@ -3337,12 +3389,14 @@ h6 {
   font-size: clamp(1.8rem, 3.6vw, 2.8rem);
   text-transform: uppercase;
   text-wrap: balance;
+  font-family: 'Oswald', sans-serif;
 }
 
 .app-feature__head p {
   font-size: 0.9rem;
   line-height: 1.8;
   color: var(--muted);
+  font-family: 'Oswald', sans-serif;
 }
 
 /* -------------------------------------------------- Visual điện thoại */
@@ -3813,5 +3867,82 @@ h6 {
 
   .hero__media {
     transform: none;
+  }
+}
+/* ========================================================================
+   1. GIAO DIỆN DESKTOP (> 768px): ZIG-ZAG 2 CỘT CÂN BẰNG
+   ======================================================================== */
+@media screen and (min-width: 769px) {
+  .story-split {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+    align-items: stretch !important; /* Ép chữ và ảnh cao bằng nhau */
+  }
+
+  /* Khối thường (Khối 1, Khối 3): Chữ bên Trái (1) - Ảnh bên Phải (2) */
+  .story-split .green-card {
+    order: 1 !important;
+  }
+  .story-split .media-ph {
+    order: 2 !important;
+  }
+
+  /* Khối đảo chiều (Khối 2): Ảnh bên Trái (1) - Chữ bên Phải (2) */
+  .story-split.about-split--media-first .media-ph,
+  .story-split.mission__row--reverse .media-ph {
+    order: 1 !important;
+  }
+  .story-split.about-split--media-first .green-card,
+  .story-split.mission__row--reverse .green-card {
+    order: 2 !important;
+  }
+
+  .story-split .media-ph {
+    height: 100% !important;
+    margin: 0 !important;
+    background: transparent !important; /* Xóa mảng màu xanh dư */
+  }
+
+  .story-split .media-ph__img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 20px !important;
+  }
+}
+
+/* ========================================================================
+   2. GIAO DIỆN MOBILE (<= 768px): ĐỒNG NHẤT CHỮ TRÊN -> ẢNH DƯỚI
+   ======================================================================== */
+@media screen and (max-width: 768px) {
+  .story-split {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Ép tất cả ô chữ nằm TRÊN (vị trí 1) trên Mobile */
+  .story-split .green-card {
+    order: 1 !important;
+    width: 100% !important;
+  }
+
+  /* Ép tất cả ảnh nằm DƯỚI (vị trí 2) trên Mobile */
+  .story-split .media-ph {
+    order: 2 !important;
+    width: 100% !important;
+    height: 200px !important; /* Cố định chiều cao banner gọn gàng */
+    margin: 0 !important;
+    background: transparent !important;
+  }
+
+  .story-split .media-ph__img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
   }
 }

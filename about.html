@@ -241,9 +241,8 @@
                     Từ những năm tháng còn ngồi trên ghế nhà trường, ông Đỗ Minh Quân, Giám đốc của chúng tôi, đã nhận ra một vấn đề gần gũi nhưng thường bị bỏ qua: nhiều sinh viên đang phải đánh đổi sức khỏe để thích nghi với nhịp sống bận rộn.
 
                  </p>
-
-
-                  <div class="about-split">
+                  <!-- KHỐI 1: Chữ trước -> Ảnh sau -->
+                  <div class="about-split story-split">
                     <div class="green-card">
                       <p style="font-size: large">
                         Những buổi học kéo dài, bài tập đến hạn, áp lực thi cử và những lo toan về
@@ -265,16 +264,10 @@
                     </figure>
                   </div>
 
-                  <div class="about-split about-split--media-first">
-                    <figure class="media-ph media-ph--library media-ph--has-image">
-                      <img class="media-ph__img" src="assets/img/blog/van-dong.webp"
-                          alt="Vận động" width="1200" height="900" loading="lazy">
-                      <div class="media-ph__art" aria-hidden="true">
-                        <svg class="icon"><use href="#i-run"></use></svg>
-                      </div>
-                    </figure>
+                  <!-- KHỐI 2: Đã sửa style="..." thành class="..." và đưa Chữ lên trước Ảnh -->
+                  <div class="about-split about-split--media-first story-split">
                     <div class="green-card">
-                      <p  style="font-size: large">
+                      <p style="font-size: large">
                         Từ trăn trở đó, ông Đỗ Minh Quân mong muốn xây dựng một nền tảng giúp thu hẹp
                         khoảng cách giữa mong muốn và khả năng chăm sóc sức khỏe của sinh viên.
                         Ông cho rằng không ai có thể thay đổi lối sống chỉ sau một đêm mà mọi thay đổi
@@ -282,6 +275,13 @@
                         trở nên thuận tiện hơn, mỗi người sẽ có thêm cơ hội để bắt đầu.
                       </p>
                     </div>
+                    <figure class="media-ph media-ph--library media-ph--has-image">
+                      <img class="media-ph__img" src="assets/img/blog/van-dong.webp"
+                          alt="Vận động" width="1200" height="900" loading="lazy">
+                      <div class="media-ph__art" aria-hidden="true">
+                        <svg class="icon"><use href="#i-run"></use></svg>
+                      </div>
+                    </figure>
                   </div>
 
                   <blockquote class="pullquote">
@@ -309,7 +309,7 @@
 
             <div class="accordion__panel" id="panel-mission" role="region" aria-labelledby="trigger-mission" data-accordion-panel inert>
               <div class="accordion__inner">
-                <div class="mission">
+                <div class="mission " >
                   <figure class="media-ph media-ph--library media-ph--has-image">
                     <img class="media-ph__img" src="assets/img/blog/bua-an-ban-be.webp"
                         alt="Bữa ăn cùng bạn bè" width="1792" height="900" loading="lazy">
@@ -325,8 +325,8 @@
 
                   <h4 class="mission__aaa">Chúng tôi đề cao ba mục tiêu chính – AAA</h4>
 
-                  <div class="mission__row">
-                    <div class="green-card">
+                  <div class="mission__row story-split">
+                    <div class="green-card ">
                       <h5 style="font-size: large">1. Xóa bỏ rào cản <span>(Accessibility)</span></h5>
                       <p  style="font-size: large">
                         Biến chế độ ăn “healthy” từ một khái niệm đắt đỏ và phức tạp trở thành lựa chọn
@@ -342,7 +342,7 @@
                     </figure>
                   </div>
 
-                  <div class="mission__row mission__row--reverse">
+                  <div class="mission__row mission__row--reverse story-split">
                     <figure class="media-ph media-ph--library media-ph--has-image">
                     <img class="media-ph__img" src="assets/img/blog/theo-doi-suc-khoe.webp"
                         alt="Theo dõi sức khoẻ" width="1792" height="900" loading="lazy">
@@ -359,7 +359,7 @@
                     </div>
                   </div>
 
-                  <div class="mission__row">
+                  <div class="mission__row story-split">
                     <div class="green-card">
                       <h5 style="font-size: large">3. Từ nhận thức đến hành động <span>(Action)</span></h5>
                       <p  style="font-size: large">
@@ -527,7 +527,6 @@
         <div>
           <p class="eyebrow">Bắt đầu từ một bữa ăn</p>
           <h2 id="about-cta-title">Bạn không cần thay đổi mọi thứ trong một ngày.</h2>
-          <p>Chọn một món ngon hơn, một thói quen nhỏ hơn — NUTRISYNC lo phần còn lại.</p>
         </div>
         <a class="btn btn--light" href="index.html#menu">
           Xem thực đơn
