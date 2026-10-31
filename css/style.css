@@ -4100,3 +4100,26 @@ font-family: 'Oswald', sans-serif;
   background: var(--green-700) !important;
   display: inline-block !important;
 }
+/* 1. Chống tràn ngang trên html, body bằng 'clip' (KHÔNG làm mất sticky của Header) */
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: clip !important; /* 'clip' chặn tràn lề mà không phá vỡ position: sticky */
+}
+
+/* 2. Đảm bảo Header luôn cố định ở mép trên cùng khi cuộn */
+.site-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+/* 3. Khóa tràn ngang trực tiếp ở cấp độ thẻ chứa nội dung và khung ảnh */
+main,
+.section,
+.container,
+.media-ph,
+.feature-row .media-ph {
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
