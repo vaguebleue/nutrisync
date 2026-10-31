@@ -734,15 +734,35 @@ h6 {
 /* --------------------------------------------------------------------------
    5. HERO – trang Cửa hàng & Về chúng tôi
    -------------------------------------------------------------------------- */
+/* 1. Ép thẻ cha (.hero) căn giữa hoàn toàn theo chiều ngang */
 .hero {
   position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: center !important;     /* Căn giữa khối con theo chiều ngang */
+  justify-content: center !important;  /* Căn giữa theo chiều dọc */
   min-height: clamp(620px, 84vh, 800px);
   overflow: hidden;
   background: var(--green-950);
   color: var(--cream);
   isolation: isolate;
+  width: 100% !important;
+}
+
+/* 2. Cố định khối .hero__content ở chính giữa màn hình */
+.hero__content {
+  position: relative !important;
+  z-index: 5 !important;
+  width: 100% !important;
+  max-width: 1020px !important;
+  margin-inline: auto !important;     /* Tự động căn đều hai bên trái/phải */
+  padding-block: calc(var(--header-h) + 70px) 170px;
+  text-align: left !important;        /* Giữ chữ bên trong căn lề trái cho dễ đọc */
+}
+
+/* 3. Đảm bảo các thành phần con bên trong tự động căn theo khối giữa */
+.hero__content > * {
+  margin-inline: auto !important;     /* Căn giữa các nút bấm hoặc tiêu đề nhỏ nếu muốn */
 }
 
 .hero__media {
@@ -774,13 +794,6 @@ h6 {
   }
 }
 
-.hero__content {
-  position: relative;
-  z-index: 2;
-  max-width: 1020px;
-  padding-block: calc(var(--header-h) + 70px) 170px;
-}
-
 .hero__eyebrow {
   display: inline-flex;
   align-items: center;
@@ -792,6 +805,7 @@ h6 {
   letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--gold-soft);
+
 }
 
 .hero__eyebrow::before {
@@ -800,6 +814,7 @@ h6 {
   height: 1.5px;
   background: currentColor;
   opacity: 0.8;
+
 }
 
 .hero__title {
@@ -810,6 +825,7 @@ h6 {
   letter-spacing: -0.015em;
   color: #fdf8e3;
   text-wrap: balance;
+
 }
 
 .hero__sub {
@@ -820,6 +836,7 @@ h6 {
   font-family: 'Oswald', sans-serif;
   line-height: 1.8;
   color: rgba(248, 248, 232, 0.86);
+
 }
 
 .hero__deco {
@@ -4127,4 +4144,28 @@ main,
 .feature-row .media-ph {
   max-width: 100% !important;
   overflow: hidden !important;
+}
+/* 1. Đảm bảo khung cha .hero căn giữa hoàn toàn */
+.hero {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+/* 2. Đưa nguyên cả khối .hero__content ra chính giữa màn hình */
+.hero__content {
+  position: relative !important;
+  z-index: 5 !important;
+  width: 100% !important;
+  max-width: 1020px !important;
+  margin-inline: auto !important;     /* Căn giữa cả khối lớn */
+  text-align: left !important;        /* Toàn bộ chữ bên trong căn lề trái */
+}
+
+/* 3. Reset lại các thẻ con để không bị dòng nào tự ý nhảy ra giữa */
+.hero__content > * {
+  margin-inline: 0 !important;        /* Xóa bỏ lề tự động riêng lẻ của từng dòng */
+  text-align: left !important;
 }
