@@ -2574,7 +2574,7 @@ h6 {
 }
 
 .about-intro__card p {
-  font-size: clamp(0.98rem, 1.5vw, 1.1rem);
+  font-size: clamp(0.98rem, 1.5vw, 1.6rem);
   line-height: 1.85;
   color: var(--ink-soft);
   text-wrap: pretty;
@@ -3435,7 +3435,7 @@ font-family: 'Oswald', sans-serif;
   /* Dời vị trí:
      - translateX: % dương -> sang phải, % âm -> sang trái (mặc định: 16%)
      - translateY: px âm -> lên trên, px dương -> xuống dưới */
-  transform: scale(1.12) translateX(-50%) !important; /* Phóng to vừa phải & dịch sang phải 12% */
+  transform: scale(1.12) translateX(-50%) translateY(65px)!important; /* Phóng to vừa phải & dịch sang phải 12% */
 }
 
 .app-feature--cream .phone-mockup {
@@ -4057,22 +4057,19 @@ font-family: 'Oswald', sans-serif;
     display: none;
   }
 }
+
 /* ========================================================================
    ĐOẠN DẪN DẮT (STORY LEAD / INTRO QUOTE)
    ======================================================================== */
-
 .story-lead {
-  max-width: 840px !important;
-  margin: 40px auto 48px auto !important;
-  padding: 26px 34px !important;
-  background: #FAFAED !important;                /* Nền kem sáng */
-  border: 2px solid var(--green-900) !important;
-  border-radius: 16px !important;
-  box-shadow: 6px 6px 0px var(--green-800) !important; /* Bóng đệm khối dày lệch sang phải */
-  text-align: center !important;
-  font-family: 'Oswald', sans-serif !important;
-  font-size: 1.6rem !important;
+  max-width: 820px !important;          /* Thu gọn chiều rộng để tạo khối chữ cân đối */
+  margin: 40px auto 48px auto !important;/* Căn giữa & tạo khoảng thở trên/dưới */
+  text-align: center !important;        /* Căn giữa câu văn chuẩn phong cách Canva */
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 1.35rem !important;         /* Kích thước chữ vừa vặn, nổi bật */
   font-weight: 600 !important;
   line-height: 1.55 !important;
   color: var(--green-900) !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
 }
