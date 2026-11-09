@@ -4206,3 +4206,17 @@ main,
   align-items: center;
   justify-content: center;
 }
+/* Ghim cố định Header ở đỉnh màn hình khi mở Menu Mobile */
+body.nav-open .site-header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Cho phép phần menu di động cuộn mượt nếu danh sách vượt quá chiều cao màn hình */
+body.nav-open .mobile-menu {
+  max-height: calc(100vh - var(--header-h, 70px));
+  overflow-y: auto;
+}
