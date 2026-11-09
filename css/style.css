@@ -1887,13 +1887,13 @@ h6 {
 }
 
 .cart__items-head h3 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
 .cart__items-head span {
-  font-size: 0.88rem;
+  font-size: 0.98rem;
   color: var(--muted);
 }
 
@@ -1914,8 +1914,8 @@ h6 {
 }
 
 .cart-item__media {
-  width: 72px;
-  height: 72px;
+  width: 92px;
+  height: 92px;
   overflow: hidden;
   border-radius: 12px;
   background: var(--cream-soft);
@@ -1929,11 +1929,12 @@ h6 {
 
 .cart-item__info {
   min-width: 0;
+  padding: 22px
 }
 
 .cart-item__info h4 {
   font-family: var(--font-body);
-  font-size: 0.98rem;
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.35;
   color: var(--ink);
@@ -1941,7 +1942,7 @@ h6 {
 
 .cart-item__info p {
   margin-top: 2px;
-  font-size: 0.88rem;
+  font-size: 0.98rem;
   color: var(--muted);
 }
 
@@ -1952,7 +1953,7 @@ h6 {
 }
 
 .cart-item__total {
-  font-size: 0.98rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--green-800);
   white-space: nowrap;

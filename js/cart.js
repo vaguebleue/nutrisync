@@ -387,20 +387,22 @@ window.NUTRISYNC = window.NUTRISYNC || {};
       return;
     }
 
-    // Nút "Khám phá thực đơn" khi giỏ trống
+// Nút "Khám phá thực đơn" khi giỏ trống
     var browseBtn = event.target.closest('[data-empty-browse]');
     if (browseBtn) {
       if (ui.closeDialog) ui.closeDialog(cartDialog);
 
-      if (document.body.classList.contains('page-store')) {
-        var menu = document.getElementById('menu');
-        if (menu) {
+      // Kiểm tra nếu đang đứng ở trang Cửa hàng
+      if (document.body.classList.contains('page-store') || document.body.classList.contains('page-home')) {
+        var catalogSection = document.getElementById('catalog');
+        if (catalogSection) {
           window.setTimeout(function () {
-            menu.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            catalogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 120);
         }
       } else {
-        window.location.href = 'store.html#menu';
+        // Chuyển hướng từ trang khác về phần thực đơn của trang Cửa hàng
+        window.location.href = 'index.html#catalog';
       }
     }
   });
