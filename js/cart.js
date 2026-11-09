@@ -400,7 +400,7 @@ window.NUTRISYNC = window.NUTRISYNC || {};
           }, 120);
         }
       } else {
-        window.location.href = 'index.html#menu';
+        window.location.href = 'store.html#menu';
       }
     }
   });

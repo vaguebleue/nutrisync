@@ -241,33 +241,33 @@ window.NUTRISYNC = window.NUTRISYNC || {};
      ACCORDION (trang Về chúng tôi)
      Cho phép mở đồng thời nhiều mục độc lập.
      ------------------------------------------------------------------------ */
-  var accordions = toArray(doc.querySelectorAll('[data-accordion]'));
+  // var accordions = toArray(doc.querySelectorAll('[data-accordion]'));
 
-  function setAccordionItem(item, open) {
-    var trigger = item.querySelector('[data-accordion-trigger]');
-    var panel = item.querySelector('[data-accordion-panel]');
-    if (!trigger || !panel) return;
+  // function setAccordionItem(item, open) {
+  //   var trigger = item.querySelector('[data-accordion-trigger]');
+  //   var panel = item.querySelector('[data-accordion-panel]');
+  //   if (!trigger || !panel) return;
 
-    item.classList.toggle('is-open', open);
-    trigger.setAttribute('aria-expanded', String(open));
-    panel.inert = !open;
-  }
+  //   item.classList.toggle('is-open', open);
+  //   trigger.setAttribute('aria-expanded', String(open));
+  //   panel.inert = !open;
+  // }
 
-  accordions.forEach(function (accordion) {
-    accordion.addEventListener('click', function (event) {
-      var trigger = event.target.closest('[data-accordion-trigger]');
-      if (!trigger || !accordion.contains(trigger)) return;
+  // accordions.forEach(function (accordion) {
+  //   accordion.addEventListener('click', function (event) {
+  //     var trigger = event.target.closest('[data-accordion-trigger]');
+  //     if (!trigger || !accordion.contains(trigger)) return;
 
-      var item = trigger.closest('.accordion__item');
-      if (!item) return;
+  //     var item = trigger.closest('.accordion__item');
+  //     if (!item) return;
 
-      // Kiểm tra trạng thái hiện tại của item được click
-      var willOpen = trigger.getAttribute('aria-expanded') !== 'true';
+  //     // Kiểm tra trạng thái hiện tại của item được click
+  //     var willOpen = trigger.getAttribute('aria-expanded') !== 'true';
 
-      // Chỉ thay đổi trạng thái của duy nhất item vừa bấm (không đụng đến các item khác)
-      setAccordionItem(item, willOpen);
-    });
-  });
+  //     // Chỉ thay đổi trạng thái của duy nhất item vừa bấm (không đụng đến các item khác)
+  //     setAccordionItem(item, willOpen);
+  //   });
+  // });
 
   /* ------------------------------------------------------------------------
      REVEAL KHI CUỘN

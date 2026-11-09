@@ -461,7 +461,7 @@ h6 {
 
 .primary-nav {
   flex: 1;
-  margin: 0 32px
+  margin: 0 10px
 }
 
 .primary-nav__list {
@@ -518,7 +518,7 @@ h6 {
 .search {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   height: 66px;
   padding: 4px 5px 4px 16px;
   border: 1px solid var(--line);
@@ -538,8 +538,8 @@ h6 {
 
 .search > .icon {
   color: var(--muted);
-  width: 18px;
-  height: 18px;
+  width: 30px;
+  height: 30px;
 }
 
 .search input {
@@ -563,8 +563,8 @@ h6 {
 .search__submit {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   flex: none;
   border: 0;
   border-radius: 50%;
@@ -579,8 +579,8 @@ h6 {
   transform: translateX(1px);
 }
 .search__submit .icon {
-  width: 17px;
-  height: 17px;
+  width: 28px;
+  height: 28px;
 }
 
 /* -------------------------------------------------- Nút icon */
